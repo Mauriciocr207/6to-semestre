@@ -1,0 +1,43 @@
+\section{Corrientes de conducción}
+Para el caso de un conductor como un alambre metálico, se ha estudiado que el campo eléctrico es $\vec{E} = 0$ en el interior del conductor para cargas en reposo por la \emph{ley de gauss} y el flujo de cargas hacia la superficie de este. Sin embargo, para el caso en el que hay cargas en movimiento dentro del conductor ya no hay condiciones estáticas, con lo cual muy posiblemente $\vec{E} \neq 0$. Es evidente considerar que debe existir un trabajo neto $W_q$ producido sobre estas cargas para inducir un movimiento por medio del cual las cargas siguen las trayectorias cerradas de circuitos comunes. La relación entre este trabajo por unidad de carga se puede expresar de la siguiente forma:
+
+\begin{equation}
+    \epsilon = \frac{W_q}{q} = \frac{1}{q} \oint_C \vec{F}_q \cdot d\vec{s} = \oint_C \vec{E} \cdot d\vec{s}
+    \label{eq:nonconservative}
+\end{equation}
+
+\begin{quote}
+    \emph{Es importante recordar que el campo eléctrico de forma ``natural'' es un campo conservativo debido a 
+    \begin{equation}
+        \vec{\nabla} \times \vec{E} = 0
+    \end{equation}
+    Y por el teorema de stokes
+    \begin{equation}
+        \oint_C \vec{E} \cdot d\vec{s} = 0
+    \end{equation}
+    }
+\end{quote}
+
+Sin embargo es evidente que en la ecuación \refeq{eq:nonconservative} el campo no es conservativo, por lo tanto, debe existir alguna fuente que esté produciendo dicho campo no conservativo. Y finalmente podemos expresar que
+
+\begin{equation}
+    \epsilon = \oint_C \vec{E} \cdot d\vec{s}
+\end{equation}
+
+A esta cantidad se le conoce como fuerza electromotriz o \emph{fem}. La fuente más común en donde podemos encontrar un campo eléctrico no conservativo es la batería. También, notemos que para un circuito en donde una fem genere un trabajo sobre las cargas en el conductor y así, un movimiento, el campo eléctrico no conservativo debe ser
+
+\begin{equation}
+    \vec{E} = \begin{cases}
+        E\hat{e}_E, &  \text{en el conductor} \\
+        0, & \text{en otra parte}
+    \end{cases}
+\end{equation}
+
+Si consideramos el flujo de cargas libres en un conductor, es interesante si pensamos que $\textbf{J}_f$ debe ser una función del campo eléctrico. Si consideramos, además, a los conductores isotrópicos lineales entonces se puede decir que 
+
+\begin{equation}
+    \vec{\textbf{J}}_f = \sigma \vec{E}
+\end{equation}
+
+Donde $\sigma$ es la \emph{conductividad} que está dada por el material. La conductividad tiene una estrecha relación con la llamada \emph{Ley de Ohm}, pues recordemos que la \emph{Ley de Ohm} es $I = \frac{\left| {\Delta \Phi} \right|}{R}$ y se puede llegar a que $R = \frac{l}{\sigma A}$, donde $R$ es la resistencia de un conductor
+

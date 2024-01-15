@@ -1,0 +1,53 @@
+\section{Corrientes y densidades de corriente}
+Hemos estudiado la electrostática, como la fuerza entre cargas en reposo. Ahora, comenzaremos con los principios del magnetismo que incluyen la magnetostática. 
+Supongamos que un observador situado en un punto $P$ ve cargas viajando a través de ese punto y se asume que el observador mide que $\Delta q$ cargas pasan por el punto $P$ en un intervalo de tiempo $\Delta t$. A este \textbf{flujo de cargas} se le llama \emph{corriente eléctrica} y la \emph{corriente promedio} estará dada por
+
+\begin{equation}
+    \langle I \rangle = \frac{\Delta q}{\Delta t}
+\end{equation}
+
+Si la corriente no es uniforme en el tiempo, entonces se puede definir la corriente instantánea como la \emph{razón instantánea} de flujo de carga
+
+\begin{equation}
+    I = \frac{dq}{dt}
+\end{equation}
+
+Consideraremos ahora \emph{corrientes estacionarias}, es decir, cuando se cumple que $\langle I \rangle = I$. A menudo se considera a la corriente como un flujo de cargas a lo largo de una curva, sin embargo es común que la corriente se encuentre distribuida en algún espacio; una descripción más apropiada hacia esto es considerando las \emph{densidades de corriente}. Sea la \emph{densidad volumétrica de corriente}, \textbf{J}, que describe la cantidad de cargas $\Delta q$ que pasan a través de una sección de superficie $\Delta a$ en un intervalo de tiempo $\Delta t$. Es decir que
+
+\begin{equation}
+    \langle \textbf{J} \rangle = \frac{\langle I \rangle}{\Delta a} = \frac{\Delta q}{\Delta t} \frac{1}{\Delta a}
+\end{equation}
+
+Si consideramos que la carga recorre una longitud $\Delta l$ al desplazarse, entonces:
+
+\begin{equation}
+    \langle \textbf{J} \rangle = \frac{\Delta q}{\Delta t \Delta a} = \frac{\Delta q}{\Delta t \Delta a} \frac{\Delta l}{\Delta l} = p\Delta v 
+\end{equation}
+
+Donde $p$ es la \emph{densidad volumétrica de carga} y $\Delta v$ es la \emph{velocidad promedio de la carga}. Llevando esto al límite cuando $\Delta l \rightarrow 0$ entonces
+
+\begin{equation}
+    \textbf{J} = pv
+\end{equation}
+
+Si consideramos elementos de carga que mantienen diferentes densidades volumétricas de carga y velocidades que se observan en un tiempo $\Delta t$, es decir, una situación más general, entonces se tendría que
+
+\begin{equation}
+    \textbf{J} = \sum_{i} p_i v_i
+\end{equation}
+
+\imagen
+    {./src/img/1.png}
+    {Sección transversal de un cilindro donde se encuentra una densidad volumétrica de corriente}
+    {\label{fig:1}}
+
+\imagen
+    {./src/img/2.png}
+    {Flujo inclinado un ángulo $\Theta$ respecto al diferencial de área}
+    {\label{fig:2}}
+
+Si consideramos además, que existe un ángulo entre la dirección del flujo y el diferencial de área $da$ como se muestra en la figura \ref*{fig:2}, entonces
+
+\begin{equation}
+    \textbf{J} = \sum_{i} p_i v_i \cos \Theta
+\end{equation}

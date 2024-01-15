@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./src/config/config}
+\input{../../config/portada}
+\input{../../config/utilities}
+
+\begin{document}
+    % Portada
+    \portada 
+        [ADA 1. Corrientes eléctricas]
+        {Carrillo Romero, Enrique Mauricio} 
+        {Enero 15, 2024}
+    % Tabla de contenido
+    \tableofcontents
+    % Contenido
+    \include{./src/sections/1}
+    \include{./src/sections/2}
+    \include{./src/sections/3}
+    \include{./src/sections/4}
+    \begin{thebibliography}{99}
+        \bibitem{}
+        Roald K. Wangsness,
+        \emph{Campos Electromagnéticos},
+        Editorial Limusa,
+        2001.
+    \end{thebibliography}
+    
+\end{document}

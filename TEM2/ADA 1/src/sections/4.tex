@@ -1,0 +1,20 @@
+\section{La consecución del equilibrio electrostático}
+Hemos visto hasta ahora que en conductores que mantienen una fem existe un campo no conservativo en donde se genera un trabajo sobre las cargas en el conductor que las llevan a moverse. Ahora bien, si se coloca alguna cantidad de carga libre sobre un conductor el sistema pierde un equilibrio electrostático que intentará reponer con la aparición de una corriente eléctrica que llevará al sistema a un estado de reposo electrostático donde la carga se localice en la superficie del conductor y así el conductor mantenga un volumen equipotencial. Aunque no se conocen los detalles sobre cuánto tiempo toma este proceso ni cómo ocurre se sabe que se trata evidentemente de una situación de cargas no estacionarias. Si consideramos un material conductor isotrópico homogeneo lineal donde se pueda decir que $\vec{\textbf{J}}_f = \sigma \vec{E}$ y $\vec{D} = \epsilon \vec{E}$ y considerando que la densidad de carga libre puede variar con el tiempo y aplicando la ecuación de continuidad para la carga libre similar a como se hizo con la carga ligada en la ecuación \refeq{eq:ligada}
+
+\begin{equation}
+    - \left( \frac{\partial{\rho_f}}{\partial{t}} \right) = \vec{\nabla} \cdot \vec{\textbf{J}}_f = \vec{\nabla} \cdot \left( \sigma \vec{E}\right) = \vec{\nabla} \cdot \left(\frac{\sigma\vec{D}}{\epsilon}\right) = \frac{\sigma}{\epsilon} \vec{\nabla} \cdot \vec{D} = \frac{\sigma}{\epsilon}\rho_f
+\end{equation}
+
+Resumiendo, entonces 
+
+\begin{equation}
+    \frac{\partial{\rho_f}}{\partial{t}} = - \frac{\sigma}{\epsilon}\rho_f
+\end{equation}
+
+Que es una ecuación diferencial cuyo resultado es
+
+\begin{equation}
+    \rho_f\left(t\right) = \rho_f\left(0\right)e^{- \frac{\sigma t}{\epsilon}} = \rho_f\left(0\right)e^{- \frac{t}{\tau}}
+\end{equation}
+
+Siendo $\tau = \epsilon / \sigma$. Lo cual significa que la densidad volumétrica de carga libre se puede escribir como una disminución de su valor inicial. Es decir, la carga volumétrica libre siempre disminuye. Este es un resultado interesante y esperado, pues concuerda con lo visto experimentalmente.

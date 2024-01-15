@@ -1,0 +1,66 @@
+\section{La ecuación de continuidad}
+Sea una superficie por la que pasa un flujo de cargas como se muestra en la figura \ref{fig:3}
+
+\imagen
+    {./src/img/3.png}
+    {Flujo de carga a través de una superficie}
+    {\label{fig:3}}
+
+Al considerar que esta superficie es cerrada de forma tal que limita un volumen $V$, entonces se puede expresar la razón total a la que la carga está fluyendo considerando la \emph{Ley de la conservación de la carga}. De esta forma, la razón total a la que la carga dentro del volumen $V$ está disminuyendo debe ser igual a la razón total a la que la carga está fluyendo a través de la superficie, que se expresa como
+
+\begin{equation}
+    - \frac{dQ}{dt} = \oint_{S} \vec{J} \cdot d\vec{a} = - \frac{d}{dt} \int_{V} \rho dv = - \int_{V} \frac{\partial{\rho}}{\partial{t}} dv = \int_{V} \vec{\nabla} \cdot \vec{\textbf{J}} dv
+    \label{eq:continuidad}
+\end{equation}
+
+\begin{quote}
+    \emph{En la Ecuación \eqref{eq:continuidad} se ha descrito el flujo de corriente eléctrica en su forma vectorial. Recuérdese que la dirección del flujo va en la misma dirección que la corriente pues es el flujo quien determina la corriente.}
+\end{quote}
+
+De la Ecuación \eqref{eq:continuidad} se desprende que
+
+\begin{equation}
+    \int_{V} \left( \vec{\nabla} \cdot \vec{\textbf{J}} + \frac{\partial{p}}{\partial{t}} \right) dv = 0
+\end{equation}
+
+Esta ecuación describe que la corriente que sale de un volumen $V$ es igual a la corriente que pasa a través de la superficie que contiene el volumen $V$. A este resultado se le conoce como \emph{La ecuación de continuidad}. Este resultado es una generalización del flujo de corriente y la \emph{Ley de conservación de la carga} la cual se cumple para cualquier volumen arbitrario si y solo si el integrando es igual a 0 en cualquier punto del espacio. De esta forma es evidente que
+
+\begin{equation}
+    \vec{\nabla} \cdot \vec{\textbf{J}} = - \frac{\partial{p}}{\partial{t}}
+\end{equation}
+
+En una superficie de discontinuidad como se muestra en la figura \ref{fig:4} se obtiene
+\begin{equation}
+    \hat{n} \cdot \left(\vec{\textbf{J}}_2 - \vec{\textbf{J}}_1 \right) = \vec{\textbf{J}}_{2n} - \vec{\textbf{J}}_{1n} = - \frac{\partial{\sigma}}{\partial{t}}
+    \label{eq:discontinuidad}
+\end{equation}
+
+\imagen
+    {./src/img/4.png}
+    {Flujos de corriente en una superficie de discontinuidad}
+    {\label{fig:4}}
+
+La Ecuación \eqref{eq:discontinuidad} muestra que si en una superficie de discontinuidad el flujo 2 es mayor al flujo 1, entonces la carga deberá acumularse en la superficie de discontinuidad.
+
+\subsection{Ecuación de continuidad en dieléctricos}
+Para el caso de un dieléctrico en donde se tiene $\rho_b$ como la densidad de carga volumétrica ligada y $\rho_f$ como la densidad volumétrica de carga libre, entonces, para el caso de la carga ligada, la polarización ocasiona u cambio de orientación o reordenamiento de cargas, con lo cual, la carga ligada necesariamente se conserva. Definiendo $\textbf{J}_b$ como el flujo de corriente de carga volumétrica ligada entonces
+
+\begin{equation}
+    \vec{\nabla} \cdot \vec{\textbf{J}}_b = - \frac{\partial{p}_b}{\partial{t}}
+    \label{eq:ligada}
+\end{equation}
+
+y como $\rho_b = - \vec{\nabla} \cdot \textbf{P}$ donde $\textbf{P}$ es la polarización en el dieléctrico, entonxes
+
+\begin{equation}
+    \vec{\nabla} \cdot \vec{\textbf{J}}_b - \frac{\partial}{\partial{t}} \vec{\nabla} \cdot \textbf{P} = \vec{\nabla} \cdot \left( \vec{\textbf{J}}_b - \frac{\partial{\vec{\textbf{P}}}}{\partial{t}} \right) = 0
+\end{equation}
+
+Y dado que esto debe cumplirse en todo el espacio, entonces $\vec{\textbf{J}}_b = \frac{\partial{\vec{\textbf{P}}}}{\partial{t}}$
+Si se analiza la carga volumétrica libre, se obtienen resultados similares.
+
+
+
+
+
+
