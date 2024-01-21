@@ -1,0 +1,23 @@
+\section{¿Qué es entropía?}
+En los temas de termodinámica hemos visto como la entropía está fuertemente implicada en los procesos termodinámicos, y sabemos que la entropía es una buena herramienta para analizar las máquinas en ingeniería al aplicarles las segunda ley, esto con el fin de conocer si la máquina está funcionando correctamente, o para conocer si la máquina está cayendo en procesos irreversibles. Sin embargo, se puede considerar definir qué es realmente la entropía, aunque la tarea resulta realmente complicada. A pesar de ello, esto no nos impide desarrollar herramientas que nos ayuden a aplicar el concepto de entropía. Similar ocurre con el concepto de Energía, pues no se comprende con exactitud qué es la Energía y, sin embargo, muchos avances han ocurrido en el mundo gracias a este concepto. Por otro lado, sí es posible hacer interpretaciones dependiendo del contexto en donde se utilice el concepto de entropía. En principio, se podría considerar de forma un poco burda, que la entropía se puede interpretar como un \emph{desorden molecular} o \emph{aleatoriedad molecular}. Cuando un sistema es desordenado se puede considerar que las posiciones moleculares son menos predecibles y, por lo tanto, y la entropía es alta, entonces se podría decir que, por esa razón, los sólidos tienen una entropía más baja que los gases.
+A partir del punto de vista de la termodinámica estadística, un sistema aislado que parece estar en equilibrio puede mostrar un nivel alto de actividad molecular debido al movimiento de las partículas en el sistema. A cada estado macroscópico corresponde un gran número posible de estados microscópicos o configuraciones moleculares. Estos estados moleculares se pueden llamar microestados y Boltzmann fue el primero en formular la hipótesis de que la entropía de un sistema con un macroestado determinado está relacionada con el número total de posibles microestados del sistema $W$. Esta idea fue desarrollada más adelante por Planckaaaa con lo cual, se llegó a la siguiente relación
+\begin{equation}
+    S = k\ln W
+\end{equation}
+La cual se conoce como la \textbf{relación de Boltzmann}. 
+Más adelante Gibbs generalizaría esta ecuación considerando que la entropía sería una medida de la suma de todas las probabilidades de que ocurra un microestado, dando que:
+\begin{equation}
+    S = -k \sum p_i \log p_i
+\end{equation}
+
+Donde $p_i$ es la probabilidad de que ocurra el microestado $i$. Gibbs reduce la relación de Boltzmann considerando que todos los microestados son igual de probables (equiprobables) siendo que $p_i = 1/W = constante \ll 1$. Entonces, ahora podemos ``definir'' a la entropía interpretandola como una medida de la aleatoriedad térmica o desorden molecular, la cual aumenta en cualquier moemnto que un sistema aislado experimenta un proceso. La definición anterior dada por Gibbs es una forma de definir la entropía en términos de los microestados probables de un sistema con partículas que se mueven de forma aleatoria. Otra forma de definir la entropía es a través de las propiedades termodinámicas de un sistema. Se sabe que la entropía puede ser definida como
+\begin{equation}
+    S = \frac{Q}{T}
+\end{equation}
+Esta definición se da a partir de que en procesos reversibles la entropía se conserva dando que, para dos estados en un proceso reversible $Q_1/T_1 = Q_2/T_2$. También observamos que la entropía no es \emph{per se} calor, pues al estar dividida por la temperatura se tiene unidades de $J/K$. Dada la definición más conocida se tiene que
+\begin{equation}
+    \Delta S = \int_{a}^{b} \frac{dQ}{T}
+\end{equation}
+
+\section{Tercera Ley de la Termodinámica}
+Se podría considerar ahora, que, como las partículas en fase sólida oscilan continuamente creando una cierta incertidumbre de su posición, al disminuir la temperatura estas oscilaciones se van desvaneciendo y la posición se hace más certera, con menos incertidumbre. De este modo se pensaría que cuando las moléculas llegan a una temperatura de cero absoluto las moléculas se inmovilizarían y por lo tanto, la energía sería mínima. Por lo tanto, \emph{la entropía de una sustancia pura cristalina a una temperatura absoluto de cero es cero}, debido a que la incertidumbre de cada partícula se hace 0. Esta idea es conocida como la \textbf{tercera ley de la termodinámica}. Por mucho tiempo se considero que un valor absoluto de entropía no significa nada, sino que era el cambio de entropía lo que realmente tenía un significado real, así como la Energía de un sistema. Sin embargo, el postulado de Nernst establece algo similar a lo ya mencionado, que \emph{la entropía de cualquier objeto en el cero absoluto de temperatura es cero}. 

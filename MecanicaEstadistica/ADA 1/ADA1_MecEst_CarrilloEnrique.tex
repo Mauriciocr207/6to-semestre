@@ -1,0 +1,23 @@
+\documentclass{article}
+
+\input{./src/config/config}
+\input{../../config/utilities}
+\input{../../config/portada}
+\setboolean{moreThanOneAuthor}{false}
+
+\begin{document}
+    % Portada
+    \portada 
+        [Tarea 1. Tercera ley de la termodinámica]
+        {
+            \Autores{
+                Enrique Mauricio Carrillo Romero
+            }
+        }
+        {Enero 15, 2024}
+    % % Tabla de contenido
+    \tableofcontents
+    % Contenido
+    \input{./src/sections/1}
+    \input{./src/sections/referencias}
+\end{document}
