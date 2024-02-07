@@ -1,0 +1,25 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{../../config/config.tex}
+\input{../../config/portada.tex}
+\input{../../config/utilities.tex}
+
+\begin{document}
+\newboolean{moreThanOneAuthor}
+\setboolean{moreThanOneAuthor}{false}
+% Portada
+\portada
+[Mecánica Estadística. Tarea 3: Sistema de dos estados]
+{Carrillo Romero, Enrique Mauricio}
+{Febrero 06, 2024}
+% Tabla de contenido
+\tableofcontents
+% Contenido
+
+\begin{multicols*}{2}
+    \input{src/sections/1}
+    \input{src/sections/2}
+\end{multicols*}
+\end{document}

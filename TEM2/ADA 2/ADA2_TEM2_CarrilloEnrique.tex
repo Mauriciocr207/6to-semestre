@@ -1,0 +1,168 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{../../config/config.tex}
+\input{../../config/portada.tex}
+\input{../../config/utilities.tex}
+
+\begin{document}
+\newboolean{moreThanOneAuthor}
+\setboolean{moreThanOneAuthor}{false}
+% Portada
+\portada
+[Teoría Electromagnética II. ADA 2. Campo $\vec{B}$. Inducción magnética]
+{Carrillo Romero, Enrique Mauricio}
+{Enero 15, 2024}
+% Tabla de contenido
+\tableofcontents
+% Contenido
+\begin{multicols}{2}
+\input{./src/sections/introduccion}
+\section{Ley de Ampere}
+Los fenómenos magnéticos se conocen desde hace cientos de años, pues ya se había observado que ciertos materiales naturales podían atraer a otros materiales. El nombre de magnetismo se asocia con los objetos encontrados en la cercanía de la antigua ciudad de \emph{Magnesia} en el Asia Menor. A pesar de que se pensaba que la electricidad y el magnetismo eran fenómenos de distinta índole, se realizaron avances en torno al magnetismo, como la brújula. En el año de 1819, Oersted encontraría el primer indicio de que esta relación entre electricidad y magnetismo era posible. El mismo año, Oersted descubrió por accidente que una corriente eléctrica podía ejercer fuerzas sobre una brújular magentica. 
+
+\imagen{./src/img/1.png}{Representación de dos contornos cerrados con corrientes $I$ e $I'$}{\label{fig:1}}
+
+Más tarde, Ampere supo del trabajo de Oersted y comenzó a realizar experimentos, encontrando que dos cables con una corriente estacionaria ejercían fuerza entre ellos. Entre los años 1820 y 1825, Ampere dedujo la Ley básica de la fuerza entre corrientes elécrtricas.
+
+\subsection{Fuerza entre dos circuitos completos}
+
+Obsérvese que el diagrama de la figura \ref{fig:1} no considera ninguna batería que produzca una corriente o flujo de electrones, sin embargo se puede suponer que estas baterías se encuentran situadas en alguna posición que es muy lejana y, por lo tanto, despreciable. Considerando un circuito completamente cerrado, se tiene entonces, que la fuerza entre los conductores se puede expresar en función de los elementos de corriente $Id\vec{s}$ y $I'd\vec{s'}$, y la localización de estos elementos de corriente se puede expresar con $\vec{r}$ y $\vec{r}'$ y el vector de posición relativa entre estos dos vectores $\vec{R} = \vec{r} - \vec{r}'$. La ley experimental descrita por Ampere se traduce en
+
+\begin{equation}
+    F_{C' \rightarrow C}=\frac{\mu_0}{4\pi} \oint_C \oint_{C'} \frac{Id\vec{s}\times (I'd\vec{s'} \times \hat{R} ) }{R^2}
+\end{equation}
+
+La ecuación 1 se conoce como la Ley de Ampere. Esta ecuación incluye una doble integral de línea, cada una de las cuales se debe tomar sobre el circuito correspondiente. El factor $\frac{\mu_0}{4\pi}$ es un factor de proporcionalidad, donde $\mu_0$ es la permeabilidad del espacio libre o vacío.
+
+\section{Inducción magnética}
+La ecuacion 1 se puede expresar también de la forma
+
+\begin{equation}
+    F_{C' \rightarrow C}=\oint_C  Id\vec{s}\times  \left(\frac{\mu_0}{4\pi} \oint_{C'} \frac{I'd\vec{s'} \times \hat{R}}{R^2} \right)
+\end{equation}
+
+Se puede observar que el factor entre paréntesis es independiente del elemento de corriente $Id\vec{s}$, por ello, se define una nueva cantidad llamada inducción magnética
+
+\begin{equation}
+    \vec{B}(\vec{r})= \frac{\mu_0}{4\pi} \oint_{C'} \frac{I'd\vec{s'} \times \hat{R}}{R^2}
+\end{equation}
+
+Y, por lo tanto
+
+\begin{equation}
+    F_{C' \rightarrow C}=\oint_C  Id\vec{s}\times  \vec{B}(\vec{r})
+\end{equation}
+
+A la ecuación 4 se le conoce como la Ley de Biot-Savart.
+
+\section{Planteamiento del problema}
+Considere una corriente $I'$ que circula a lo largo de un alambre conductor en forma de espira circular de radio a. La espira se ubica en el plano XY y su centro coincide con el origen del sistema de coordenadas.
+
+\subsection{Resolución del problema}
+De acuerdo con la ley de Biot-Savart, se tiene que, de la ecuación 4 se desprende un nuevo campo llamado la inducción magnética, donde la fuerza entre dos corrientes filamentales se puede describir como indica la ecuación 4. De ello, se desprende que la fuerza es producida no solo por la interacción de la corriente $I$ que circula en el contorno $C$, sino también a la inducción magnética generada por un segundo contorno $C'$. Este segundo contorno, para el problema planteado se trata de un anillo sobre el cual circula una corriente $I'$. Considerando que la corriente es constante en la ecuación 3, entonces, se puede escribir que la inducción magnética estará dada por
+
+\begin{equation}
+    \vec{B}\left(\vec{r}\right) = \frac{\mu_0 I}{4\pi} \oint_{C'} \frac{d\vec{s'} \times \hat{R}}{R^2}
+\end{equation}
+
+y recordando que $\hat{R} = \frac{\vec{r} - \vec{r'}}{|\vec{r} - \vec{r'}|}$, tenemos que
+
+\begin{equation}
+    \vec{B}\left(\vec{r}\right) = \frac{\mu_0 I}{4\pi} \oint_{C'} \frac{d\vec{s'} \times (\vec{r} - \vec{r'})}{|\vec{r} - \vec{r'}|^3}
+\end{equation}
+
+Ahora, de acuerdo con el planteamiento del problema, se define que
+
+\begin{equation}
+    \vec{r} = \rho\cos{\phi}\hat{\imath} + \rho\sen{\phi}\hat{\jmath} + z\hat{k} \\
+\end{equation}
+
+\begin{equation}
+    \vec{r'} = a\cos{\phi'}\hat{\imath} + a\sen{\phi'}\hat{\jmath}
+\end{equation}
+
+derivando $r'$ se tiene que
+
+\begin{equation}
+    d\vec{s'} = a\left(-\sen{\phi'}\imath + \cos{\phi'}\jmath\right)d\phi' = ad\phi'\hat{\phi'}
+\end{equation}
+
+y también, por lo tanto
+
+\begin{equation}
+    \begin{split}
+        |\vec{r} - \vec{r'}| & = (\rho\cos{\phi} - a\cos{\phi'})^2 \\
+                                & + (\rho\sen{\phi} - a\sen{\phi'})^2 \\
+                                & + z^2
+    \end{split}
+\end{equation}
+
+Entonces, planteando la integral con los elementos calculados anteriormente, se obtiene la ecuación 11. Sin embargo, la ecuación 11 puede desarrollarse aún más resolviendo los productos vectoriales, de modo que se tendrá la ecuación 12, siendo esta la ecuación que nos permitirá calcular el campo $\vec{B}$ en el espacio.
+\end{multicols}
+
+\begin{equation}
+    \vec{B}\left(\vec{r}\right) = \frac{\mu_0 I'}{4\pi} \int_{0}^{2\pi} \frac{
+        ad\phi'\left(-\sen{\phi'} \hat{\imath} + \cos{\phi'} \hat{\jmath}\right)
+        \times
+        \left[(\rho\cos{\phi} - a\cos{\phi'})^2 \hat{\imath} + (\rho\sen{\phi} - a\sen{\phi'})^2 \hat{\jmath} + z^2 \hat{k}\right]
+    }{
+        \left[(\rho\cos{\phi} - a\cos{\phi'})^2 + (\rho\sen{\phi} - a\sen{\phi'})^2 + z^2\right]^{3/2}
+    }
+\end{equation}
+
+\begin{equation}
+    \vec{B}\left(\vec{r}\right) = \frac{\mu_0 I'}{4\pi} \int_{0}^{2\pi} \frac{
+        \left[z\cos{\phi'}\hat{\imath}
+            + z\sen{\phi'}\hat{\jmath}
+            - \left(
+            \sen{\phi'}\left(\rho\sen{\phi} - a\sen{\phi'}\right)
+            + \cos{\phi'}\left(\rho\cos{\phi} - a\cos{\phi'}\right)
+            \right)\hat{k}\right]
+        d\phi'
+    }{
+        \left[\rho^2 + a^2 - 2a\rho\left(\cos{\phi - \phi'}\right) + z^2\right]^{3/2}
+    }
+\end{equation}
+
+\begin{multicols}{2}
+\section{Solución al problema}
+La ecuación 12 no tiene una solución analítica, por lo cual, se empleará el uso de software para resolver la integral numéricamente y hallar un campo vectorial que sea posible graficar gracias al software.
+Se empleará \emph{Wolfram Mathematica} para la resolución y graficación del campo $\vec{B}$. Por otro lado, se puede realizar un último tratamiento a la ecuación 12, considerando que el término $\frac{\mu_0 I'}{4\pi}$ es una constante que, para términos de la resolución y graficación, podemos considerar que tiene un valor de 1. Es por ello que la solución a nuestro sistema estará dada por la integral de la ecuación 13
+\end{multicols}
+
+\begin{equation}
+    \int_{0}^{2\pi} \frac{
+        \left[z\cos{\phi'}\hat{\imath}
+            + z\sen{\phi'}\hat{\jmath}
+            - \left(
+            \sen{\phi'}\left(\rho\sen{\phi} - a\sen{\phi'}\right)
+            + \cos{\phi'}\left(\rho\cos{\phi} - a\cos{\phi'}\right)
+            \right)\hat{k}\right]
+        d\phi'
+    }{
+        \left[\rho^2 + a^2 - 2a\rho\left(\cos{\phi - \phi'}\right) + z^2\right]^{3/2}
+    }
+\end{equation}
+
+\newpage
+\begin{multicols}{2}
+\section{Resultados}
+El resultado del campo es como se muestra en la figura \ref{fig:2}. Vemos cómo esta inducción se encuentra dentro de lo que los experimentos demuestran. Este resultado, concuerda con los experimentos de Ampere y por ende, las ecuaciones de la Ley de Ampere y la ley de Biot-Savart describen correctamente el fenómeno de la inducción magnética.
+Por otro lado, puede resultar no muy evidente la forma del campo. Por ello, se muestra el gráfico de la inducción magnética $\vec{B}$  con planos de corte como se ve en la figura \ref{fig:3}
+
+\imagen{./src/img/2.png}{El campo de iniducción magnética $\vec{B}$ que produce el anillo por el que circula una corriente}{\label{fig:2}}
+
+\section{Conclusiones}
+En este trabajo, resultará interesante para el lector la forma del campo más que la ecuación que ha ayudado a graficarlo. No se puede pasar por alto que el campo tiene similitudes con el que hoy en día se conoce como el campo magnético de nuestro planeta, debido a la forma geométrica que el campo expresa.
+
+\imagen{./src/img/3.png}{El campo de iniducción magnética $\vec{B}$ con planos de corte}{\label{fig:3}}
+
+Por otro lado, es importante recalcar que este no es el campo real dado que algunas constantes se asumieron con un valor de 1 para facilidad de graficación, sin embargo, es la forma geométrica del campo lo que interesa en este trabajo y no tanto su valor en magnitud en cada punto del espacio. 
+
+
+\input{src/sections/referencias}
+
+\end{multicols}
+\end{document}

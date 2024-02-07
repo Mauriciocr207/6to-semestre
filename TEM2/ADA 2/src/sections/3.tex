@@ -1,0 +1,74 @@
+\begin{multicols}{2}
+\section{Planteamiento del problema}
+Considere una corriente $I´$ que circula a lo largo de un alambre conductor en forma de espira circular de radio a. La espira se ubica en el plano XY y su centro coincide con el origen del sistema de coordenadas. 
+
+\subsection{Resolución del problema}
+De acuerdo con la ley de Biot-Savart, se tiene que, de la ecuación 4 se desprende un nuevo campo llamado la inducción magnética, donde la fuerza entre dos corrientes filamentales se puede describir como indica la ecuación 4. De ello, se desprende que la fuerza es producida no solo por la interacción de la corriente $I$ que circula en el contorno $C$, sino también a la inducción magnética generada por un segundo contorno $C'$. Este segundo contorno, para el problema planteado se trata de un anillo sobre el cual circula una corriente $I'$. Considerando que la corriente es constante en la ecuación 3, entonces, se puede escribir que la inducción magnética estará dada por
+
+\begin{equation}
+    \vec{B}\left(\vec{r}\right) = \frac{\mu_0 I}{4\pi} \oint_{C'} \frac{d\vec{s'} \times \hat{R}}{R^2}
+\end{equation}
+
+y recordando que $\hat{R} = \frac{\vec{r} - \vec{r'}}{|\vec{r} - \vec{r'}|}$, tenemos que
+
+\begin{equation}
+    \vec{B}\left(\vec{r}\right) = \frac{\mu_0 I}{4\pi} \oint_{C'} \frac{d\vec{s'} \times (\vec{r} - \vec{r'})}{|\vec{r} - \vec{r'}|^3}
+\end{equation}
+
+Ahora, de acuerdo con el planteamiento del problema, se define que
+
+\begin{equation}
+    \vec{r} = \rho\cos{\phi}\hat{\imath} + \rho\sen{\phi}\hat{\jmath} + z\hat{k} \\
+\end{equation}
+
+\begin{equation}
+    \vec{r'} = a\cos{\phi'}\hat{\imath} + a\sen{\phi'}\hat{\jmath}
+\end{equation}
+
+derivando $r'$ se tiene que
+
+\begin{equation}
+    d\vec{s'} = a\left(-\sen{\phi'}\imath + \cos{\phi'}\jmath\right)d\phi' = ad\phi'\hat{\phi'}
+\end{equation}
+
+y también, por lo tanto
+
+\begin{equation}
+    \begin{split}
+        |\vec{r} - \vec{r'}| &= (\rho\cos{\phi} - a\cos{\phi'})^2\\
+        & + (\rho\sen{\phi} - a\sen{\phi'})^2\\
+        & + z^2
+    \end{split}
+\end{equation}
+
+Entonces, planteando la integral con los elementos calculados anteriormente, se obtiene la ecuación 11. Sin embargo, la ecuación 11 puede desarrollarse aún más resolviendo los productos vectoriales, de modo que se tendrá la ecuación 12, sienda esta la ecuación que nos permitirá calcular el campo $\vec{B}$ en el espacio.
+
+\end{multicols}
+\begin{multicols}{1}
+    \begin{equation}
+        \vec{B}\left(\vec{r}\right) = \frac{\mu_0 I'}{4\pi} \int_{0}^{2\pi} \frac{
+            ad\phi'\left(-\sen{\phi'} \hat{\imath} + \cos{\phi'} \hat{\jmath}\right) 
+            \times 
+            \left[(\rho\cos{\phi} - a\cos{\phi'})^2 \hat{\imath} + (\rho\sen{\phi} - a\sen{\phi'})^2 \hat{\jmath} + z^2 \hat{k}\right]
+        }{
+            \left[(\rho\cos{\phi} - a\cos{\phi'})^2 + (\rho\sen{\phi} - a\sen{\phi'})^2 + z^2\right]^{3/2}
+        }
+    \end{equation}
+\end{multicols}
+
+\begin{multicols}{2}
+    \begin{equation}
+        \vec{B}\left(\vec{r}\right) = \frac{\mu_0 I'}{4\pi} \int_{0}^{2\pi} \frac{
+            \left[z\cos{\phi'}\hat{\imath}
+            + z\sen{\phi'}\hat{\jmath}
+            - \left(
+                \sen{\phi'}\left(\rho\sen{\phi} - a\sen{\phi'}\right)
+                + \cos{\phi'}\left(\rho\cos{\phi} - a\cos{\phi'}\right)
+            \right)\hat{k}\right]
+            d\phi'
+        }{
+            \left[\rho^2 + a^2 - 2a\rho\left(\cos{\phi - \phi'}\right) + z^2\right]^{3/2}
+        }
+    \end{equation}
+\end{multicols}
+

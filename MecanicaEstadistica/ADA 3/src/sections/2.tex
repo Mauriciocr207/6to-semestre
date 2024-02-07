@@ -1,0 +1,160 @@
+\section{Solución}
+Partimos de la ecuación del número de microestados accesibles y la energía del sistema, donde se tiene que
+
+\imagen
+{./src/img/1.png}
+{Imagen del planteamiento del problema}
+{\label{fig:1}}
+
+\begin{equation}
+    \Omega_a = \binom{N}{n}
+\end{equation}
+
+\begin{equation}
+    E = n\epsilon - (N - n)\epsilon = \epsilon(2n-N)
+\end{equation}
+
+Ahora, dado que la ecuación 1, se puede reescribir como
+
+\begin{equation}
+    \Omega_a = \frac{N!}{(N-n)!n!}
+\end{equation}
+
+y dada la definición de entropía donde $S(\Omega_a) = \ln{\Omega_a}$, entonces, aplicando el logaritmo y utilizando la aproximación de Stirling que expresa que $\ln{n!} \approx n\ln{n} - n$ cuando $n\rightarrow\infty$, entonces la entropía se puede expresar como
+
+\begin{equation}
+    \begin{aligned}
+    S &= k\left(\ln{\frac{N!}{(N-n)!n!}}\right) \\
+    &= k\left(N\ln{N} - (N-n)\ln{(N-n)} - n\ln{n}\right)
+    \end{aligned}
+    \label{eq:entropia}
+\end{equation}
+
+Y recordando que $E = \epsilon(2n-N)$, entonces se puede decir que
+
+\begin{equation}
+    n = \frac{1}{2}\left(\frac{E}{\epsilon} + N\right)
+    \label{eq:n}
+\end{equation}
+
+Si en la ecuación \refeq{eq:n}, se define $n = xN$ donde $x$ es la fracción de partículas que se encuentran en el estado de máxima energía, entonces se puede reescribir partiendo de la ecuación \refeq{eq:n}
+
+\begin{equation}
+    \frac{n}{N} = \frac{1}{2}\left(\frac{E}{N\epsilon} + 1\right) = x
+    \label{eq:fraccion:1}
+\end{equation}
+
+De esta forma, la ecuación \refeq{eq:entropia} se puede reescribir como 
+
+\begin{equation}
+    S = -Nk\left[(1-x)\ln{(1-x)} + x\ln{x}\right]
+    \label{eq:entropia:2}
+\end{equation}
+
+De las ecuaciones termodinámicas, recuérdese que
+
+\begin{equation}
+    \frac{1}{T} = \frac{\partial S}{\partial E} \rightarrow \frac{1}{T} = \frac{\partial S}{\partial x} \frac{\partial x}{\partial E}
+\end{equation}
+
+Encontrando la parcial de la entropía respecto de la energía se tiene que 
+
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial S}{\partial E} = \frac{k}{2\epsilon}\ln{\frac{1-x}{x}} = \frac{1}{T}
+        \label{eq:parcial:entropia}
+    \end{aligned}
+\end{equation}
+
+Vemos que, de la ecuación \refeq{eq:parcial:entropia} es posible despejar $x$, quedando
+
+\begin{equation}
+    x = \frac{1}{e^\frac{2\epsilon}{kT} + 1}
+    \label{eq:fraccion:2}
+\end{equation}
+
+De la ecuación \refeq{eq:fraccion:1} y \refeq{eq:fraccion:2} se puede obtener una relación para la energía del sistema en términos de la temperatura, el número de partículas y la energía $\epsilon$
+
+\begin{equation}
+    \begin{aligned}
+        E &= -N\epsilon\frac{e^\frac{2\epsilon}{kT}-1}{e^\frac{2\epsilon}{kT}+1} \\
+        &= -N\epsilon\tanh{\left(\frac{\epsilon}{kT}\right)}
+    \end{aligned}
+    \label{eq:energia}
+\end{equation}
+
+Graficando la energía $E$ como función de la temperatura $T$, se tiene lo siguiente
+
+\imagen
+{./src/img/2.png}
+{Energía total del sistema en términos de la temperatura}
+{\label{fig:2}}
+
+En la figura \ref{fig:2} se observa que, para este sistema en particular, son necesarias temperaturas negativas para alcanzar mayores niveles de energía. Sin embargo, este es un resultado matemático, físicamente no es posible alcanzar temperaturas negativas, por lo cual, se supondrá que esta ecuación es válida solo para temperaturas con $T \geq 0$. También, vemos que la energía es mayor cuando $T \rightarrow \infty$, donde la energía es $\lim_{T \to \infty} E\left(T\right) = 0$ y cuando $T \rightarrow 0$ entonces $E = 0$. Por ello, el intervalo de temperatura será $0 \geq T \geq \infty$.
+
+\subsection{La entropía}
+Bajo las ecuaciones \refeq{eq:entropia:2}, \refeq{eq:fraccion:1} y \refeq{eq:energia}, se puede encontrar una relación para la entropía en términos de la temperatura, de modo que se tiene lo siguiente:
+
+{\scriptsize 
+\begin{equation}
+    \begin{split}
+        S &= \\
+            &\quad -Nk\left[
+            \frac{1}{2} \left( 1+\tanh{\left( \frac{\epsilon}{kT} \right)} \right)
+                \ln\left( \frac{1}{2} \left( 1 + \tanh{\left( \frac{\epsilon}{kT} \right)} \right) \right) \right. \\
+            &\quad - \left. \frac{1}{2} \left( \tanh{\left( \frac{\epsilon}{kT} \right)} - 1 \right)
+                \ln\left( -\frac{1}{2} \left( \tanh{\left( \frac{\epsilon}{kT} \right)} - 1 \right) \right)
+        \right]
+    \end{split}
+\end{equation}
+}
+
+El resultado de graficar la entropía como función de la temperatura para este sistema, es el siguiente
+
+\imagen
+{./src/img/3.png}
+{Entropía del sistema en función de la temperatura}
+{\label{fig:3}}
+
+Se observa en la figura \ref{fig:3} que la entropía aumenta conforme aumenta la temperatura. También, se observa que pareciese ser que la entropía decae a 0 cuando la temperatura es igual a 1 unidad, sin embargo, si disminuimos la escala para observar valores más pequeños en la gráfica, se observa que la entropía decae a 0 rápidamente para valores de temperatura menores a 1, tal y como se puede observar en la figura \ref{fig:5}.
+
+\imagen
+{./src/img/5.png}
+{Entropía como función de la temperatura, en escala de temperatura de 0 a 2}
+{\label{fig:5}}
+
+Por otra parte, para encontrar el máximo de entropía cuando la temperatura es infinita se ha recurrido también al software, teniendose que
+
+\begin{equation}
+    \lim_{T \to \infty} S\left(T\right) = \ln{(2)}
+\end{equation}
+
+Y resulta evidente que, cuando $T = 0$, entonces $S = 0$.
+
+
+\subsection{Energía de Helmholtz}
+Recuérdese que la energía de Helmholtz está dada por la relación $F = E -TS$, por ello, al tener ya una ecuación para la energía y la entropía, resulta sencilla el algebra para determinar la energía de Helmholtz. Por tanto, se tiene que
+
+{\scriptsize
+\begin{equation}
+    \begin{split}
+        F &= -N\epsilon\tanh{\left(\frac{\epsilon}{kT}\right)} \\
+        &\quad + Nk\left[
+            \frac{1}{2} \left( 1+\tanh{\left( \frac{\epsilon}{kT} \right)} \right)
+                \ln\left( \frac{1}{2} \left( 1 + \tanh{\left( \frac{\epsilon}{kT} \right)} \right) \right) \right. \\
+            &\quad - \left. \frac{1}{2} \left( \tanh{\left( \frac{\epsilon}{kT} \right)} - 1 \right)
+                \ln\left( -\frac{1}{2} \left( \tanh{\left( \frac{\epsilon}{kT} \right)} - 1 \right) \right)
+        \right]
+    \end{split}
+\end{equation}
+}
+
+La Energía de Helmholtz puede entenderse como una medida de la cantidad de energía que se tiene que proveer para crear un sistema dado, una vez que el medio ambiente haya efectuado una transferencia de calor espontánea. Es decir, el medio ambiente puede ceder espontáneamente energía a un sistema dado por medio de calor. De este modo, al graficar la función de F vemos que, como muestra la figura \ref*{fig:4}, la energía de Helmholtz se hace cada vez más negativa, con lo cual, cuando $T \rightarrow \infty$, entonces se necesitará una energía nula para crear el sistema dado, con lo cual, el sistema se creará espontáneamente, claro, bajo las condiciones necesarias.
+
+\imagen
+{./src/img/4.png}
+{Energía de Helmholtz en función de la temperatura}
+{\label{fig:4}}
+
+\section{Conclusiones}
+Dado que el sistema planteado no es un sistema real, es interesante observar cuál será su comportamiento aplicando las leyes ya conocidas de la termodinámica y la mecánica estadística. Por otro lado, ha resultado interesante observar el resultado que muestra la energía de Helmholtz y la información adicional que nos provee al graficar.
